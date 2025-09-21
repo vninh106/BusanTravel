@@ -1,28 +1,24 @@
+// Lấy tất cả section và link trong menu
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("nav a");
 
-// Tính toán vùng hiển thị section
-const options = {
-  root: null,
-  rootMargin: "0px",
-  threshold: 0.375  // cần 60% section trong khung hình mới coi là active
-};
+// Logo: về Home và reload
+document.getElementById("logo-link").addEventListener("click", (e) => {
+  e.preventDefault();              // chặn hành động mặc định của thẻ <a>
+  window.location.href = "#home";  // cuộn về section Home
+  setTimeout(() => {
+    window.location.reload();      // reload sau 100ms để đảm bảo đã cuộn về Home
+  }, 100);
+});
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      // Bỏ active cũ
-      navLinks.forEach(link => link.classList.remove("active"));
+console.log("Website Aurora Travel đã load thành công!");
 
-      // Lấy id section
-      const id = entry.target.getAttribute("id");
-      const activeLink = document.querySelector(`nav a[href="#${id}"]`);
-      if (activeLink) {
-        activeLink.classList.add("active");
-      }
-    }
-  });
-}, options);
+// Refresh trang khi click vào logo
+document.querySelector(".logo img").addEventListener("click", () => {
+  window.location.reload();
+});
 
-// Quan sát từng section
-sections.forEach(sec => observer.observe(sec));
+console.log("Website Aurora Travel đã load thành công!");
+
+// Đăng ký quan sát tất cả section
+sections.forEach(section => observer.observe(section));
