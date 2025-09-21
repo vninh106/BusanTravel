@@ -96,6 +96,18 @@ nav ul li a:hover {
   border-radius: 5px;
 }
 
+#food img {
+  display: block;
+  margin: 10px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+#food img:hover {
+  transform: scale(1.05);
+}
+
 /* Footer */
 footer {
   text-align: center;
@@ -110,7 +122,73 @@ footer {
   to {opacity: 1; transform: translateY(0);}
 }
 nav ul li a.active {
-  border-bottom: 2px solid #ffeb3b;
-  color: #ffeb3b;
-  font-weight: bold;
+  color: #ffeb3b;   /* đổi màu khi active */
+  font-weight: bold;  /* in đậm để dễ nhìn */
+  transition: color 0.3s ease; /* chuyển màu mượt */
+  }
+
+#introduction p {
+  margin: 5px 0;   /* các dòng thông tin cách nhau 5px */
+}
+
+#introduction .intro-text {
+  margin-top: 20px; /* đoạn văn dưới Sân bay cách ra 20px */
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Tóm tắt */
+#plan .plan-day {
+  margin: 15px auto;
+  max-width: 600px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+#plan .plan-day h3 {
+  margin: 0 0 8px;
+  color: #004080;
+}
+
+/* Chi tiết */
+#plan-detail .day {
+  margin: 25px auto;
+  max-width: 800px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  text-align: left;
+}
+
+#plan-detail h3 {
+  margin-bottom: 12px;
+  color: #004080;
+}
+
+#plan-detail ul {
+  margin-left: 20px;
+  line-height: 1.6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* đảm bảo logo nằm sát trái */
+}
+.logo img {
+  height: 40px;
+  margin-right: 10px;
+  cursor: pointer; /* hiện con trỏ tay khi hover */
 }
